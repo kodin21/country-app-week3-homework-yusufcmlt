@@ -1,3 +1,15 @@
+//COUNTRY CONTAINER
+
+.countries {
+  grid-column: center-start/center-end;
+  grid-row: 4 / span 1;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 40rem));
+}
+
+//COUNTRY CARD
+
 .card {
   position: relative;
   width: 25rem;

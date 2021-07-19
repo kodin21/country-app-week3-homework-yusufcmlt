@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./CountryCard.style.scss";
+import "../Countries.style.scss";
 
 export default function CountryCard({ cardData }) {
   const { name, language, population, region, flag } = cardData;

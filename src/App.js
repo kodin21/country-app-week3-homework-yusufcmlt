@@ -1,4 +1,5 @@
 import "./App.scss";
+import CountriesContainer from "./components/countries-container/CountriesContainer";
 import Header from "./components/header/Header";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="app">
       <div className="app__background"></div>
       <Header />
+      <CountriesContainer />
     </div>
   );
 }
