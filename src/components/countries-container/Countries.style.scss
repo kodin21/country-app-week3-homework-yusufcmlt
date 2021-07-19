@@ -2,10 +2,21 @@
 
 .countries {
   grid-column: center-start/center-end;
-  grid-row: 4 / span 1;
+  grid-row: 3 / span 1;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 40rem));
+  grid-template-rows: 10rem min-content 10rem;
+  padding: 5rem;
+
+  &__container {
+    grid-row: 2 / span 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 30rem));
+    gap: 3rem;
+
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 //COUNTRY CARD
@@ -16,34 +27,39 @@
   height: 15rem;
 
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 5px;
   background-color: white;
 
   margin: auto;
   cursor: pointer;
 
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
-    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
 
   &__heading {
-    position: absolute;
-    z-index: 4;
-    top: 0.5rem;
-    left: 0.5rem;
+    width: 70%;
     padding: 0.5rem;
+
+    font-size: 1.3rem;
     background-color: #5137f3;
     color: white;
+
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 4;
+
     transition: 0.3s;
   }
 
   &__flag {
     height: 100%;
+    width: 100%;
+    object-fit: cover;
 
     position: absolute;
     left: 0;
     z-index: 3;
 
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.3s;
   }
   &__content {
@@ -54,12 +70,12 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    align-content: center;
 
     height: 100%;
-    padding: 2rem;
 
     text-align: left;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 
     transition: 0.3s;
     &__info {
@@ -76,9 +92,9 @@
     left: 10%;
   }
   &:hover &__flag {
-    left: -80%;
+    left: -97%;
   }
   &:hover &__heading {
-    opacity: 0.1;
+    opacity: 0.05;
   }
 }
