@@ -1,33 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useCountryList } from "../../utils/custom-hooks";
 
 import CountryCard from "./country-card/CountryCard";
 
 import "./Countries.style.scss";
+import CountryFilter from "./country-settings/CountryFilter";
+import CountryPages from "./country-settings/CountryPages";
 export default function CountriesContainer() {
-  const [countryList, setCountryList] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get(
-        "https://restcountries.eu/rest/v2/all?fields=name;capital;languages;population;region;flag"
-      )
-      .then(({ data }) => {
-        setCountryList(data);
-      });
-  }, []);
+  const { resData, isLoading } = useCountryList(
+    "https://restcountries.eu/rest/v2/all"
+  );
 
   return (
     <div className="countries">
-      <div className="countries__filter">FILTER HERE</div>
+      <CountryFilter />
       <div className="countries__container">
-        {countryList.map((country, index) => {
-          if (index > 230) {
-            return <CountryCard cardData={country} />;
-          }
+        {resData.map((country, index) => {
+          return <CountryCard cardData={country} />;
         })}
       </div>
-      <div className="countries__paging">PAGES HERE</div>
+      <CountryPages />
     </div>
   );
 }
