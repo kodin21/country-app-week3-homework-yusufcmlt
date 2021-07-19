@@ -6,16 +6,23 @@
 
   display: grid;
   grid-template-rows: 10rem min-content 10rem;
+  row-gap: 2rem;
   padding: 5rem;
 
   &__container {
     grid-row: 2 / span 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 30rem));
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     gap: 3rem;
 
     justify-content: center;
     align-content: center;
+  }
+  &__filter {
+    background-color: red;
+  }
+  &__pages {
+    background-color: yellowgreen;
   }
 }
 
@@ -39,7 +46,7 @@
     width: 70%;
     padding: 0.5rem;
 
-    font-size: 1.3rem;
+    font-size: 1rem;
     background-color: #5137f3;
     color: white;
 
