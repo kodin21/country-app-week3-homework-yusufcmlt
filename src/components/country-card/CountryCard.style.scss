@@ -1,0 +1,72 @@
+.card {
+  position: relative;
+  width: 25rem;
+  height: 15rem;
+
+  overflow: hidden;
+  border-radius: 1rem;
+  background-color: white;
+
+  margin: auto;
+  cursor: pointer;
+
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  &__heading {
+    position: absolute;
+    z-index: 4;
+    top: 0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem;
+    background-color: #5137f3;
+    color: white;
+    transition: 0.3s;
+  }
+
+  &__flag {
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    z-index: 3;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.3s;
+  }
+  &__content {
+    position: absolute;
+    left: 100%;
+    z-index: 2;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    height: 100%;
+    padding: 2rem;
+
+    text-align: left;
+    font-size: 1.3rem;
+
+    transition: 0.3s;
+    &__info {
+      flex-basis: 100%;
+      font-weight: 700;
+      color: #5137f3;
+      i {
+        color: black;
+      }
+    }
+  }
+
+  &:hover &__content {
+    left: 10%;
+  }
+  &:hover &__flag {
+    left: -80%;
+  }
+  &:hover &__heading {
+    opacity: 0.1;
+  }
+}
