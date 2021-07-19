@@ -5,31 +5,45 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
 
-    font-size: 1.8rem;
-    font-family: inherit;
-
     width: 25rem;
     height: 15rem;
     border: none;
-    padding: 1rem;
+    font-family: inherit;
 
     position: relative;
-    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s;
+
+    &:hover {
+      background-color: #4329f1;
+    }
+    &:active {
+      transform: translateY(2px);
+    }
   }
+
   &__icon {
-    position: absolute;
     width: 4rem;
     height: 4rem;
-    top: 0;
-    left: 0;
-    z-index: 3;
 
     background-size: cover;
+
     &-world {
       background-image: url("../../assets/icons/planet-earth.svg");
     }
     &-statistics {
       background-image: url("../../assets/icons/bar-chart.svg");
     }
+  }
+  &__text {
+    font-size: 2rem;
+
+    text-align: left;
+    width: 50%;
+    padding: 1rem;
   }
 }
