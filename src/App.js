@@ -1,8 +1,13 @@
 import "./App.scss";
-import NavButton from "./components/nav-button/NavButton";
+import Header from "./components/header/Header";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="app">
+      <div className="app__background"></div>
+      <Header />
+    </div>
+  );
 }
 
 export default App;
