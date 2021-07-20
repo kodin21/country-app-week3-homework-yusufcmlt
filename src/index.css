@@ -9,14 +9,19 @@
   box-sizing: inherit;
 }
 :root {
+  /* Color Variables */
   --color-purple: #5137f3;
   --color-orange: #ff5d3d;
   --color-purple-dark: #3f2db1;
   --color-orange-dark: #be3216;
+
+  /* Box Shadow */
+  --shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
 }
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   font-family: "Space Mono", monospace;

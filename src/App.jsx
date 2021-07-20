@@ -13,6 +13,7 @@ function App() {
   const [tab, setTab] = useState("countries");
 
   const handleTabs = (tabRoute) => {
+    window.scrollTo(0, 300);
     setTab(tabRoute);
   };
 
