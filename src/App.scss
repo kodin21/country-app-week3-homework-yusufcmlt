@@ -3,23 +3,28 @@
   grid-template-columns:
     [full-start] 1fr [center-start] repeat(10, minmax(min-content, 14rem))
     [center-end] 1fr [full-end];
-  grid-template-rows: 5rem 70vh min-content 5rem;
+  grid-template-rows: 10rem [header-start] 70vh [header-end content-start] min-content [content-end] 10rem;
 
   position: relative;
 
-  &__background {
-    position: absolute;
-    background-image: linear-gradient(
-      204.81deg,
-      #04040a 5.25%,
-      #202022 42.22%,
-      #2f2f30 104.42%,
-      #04040a 132.08%
-    );
+  // &__background {
+  //   position: absolute;
+  //   background-image: linear-gradient(
+  //     204.81deg,
+  //     #04040a 5.25%,
+  //     #202022 42.22%,
+  //     #2f2f30 104.42%,
+  //     #04040a 132.08%
+  //   );
 
+  //   grid-column: center-start/center-end;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: -1;
+  // }
+  &__heading {
     grid-column: center-start/center-end;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+    align-self: center;
+    justify-self: center;
   }
 }

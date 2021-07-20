@@ -8,6 +8,12 @@
 *::after {
   box-sizing: inherit;
 }
+:root {
+  --color-purple: #5137f3;
+  --color-orange: #ff5d3d;
+  --color-purple-dark: #3f2db1;
+  --color-orange-dark: #be3216;
+}
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -16,4 +22,5 @@ body {
   font-family: "Space Mono", monospace;
   font-weight: 400;
   line-height: 1.6;
+  background-color: rgb(230, 230, 230);
 }

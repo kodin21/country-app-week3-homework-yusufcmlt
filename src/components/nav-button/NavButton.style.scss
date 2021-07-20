@@ -1,13 +1,12 @@
 .nav {
   &__button {
-    background-color: #5137f3;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     cursor: pointer;
     border-radius: 5px;
 
-    width: 25rem;
-    height: 15rem;
+    width: 35rem;
+    height: 20rem;
     border: none;
     font-family: inherit;
 
@@ -19,32 +18,41 @@
 
     transition: 0.3s;
 
-    &:hover {
-      background-color: #4329f1;
-    }
     &:active {
       transform: translateY(2px);
+    }
+    &--world {
+      background-color: var(--color-purple);
+      &:hover {
+        background-color: var(--color-purple-dark);
+      }
+    }
+    &--statistics {
+      background-color: var(--color-orange);
+      &:hover {
+        background-color: var(--color-orange-dark);
+      }
     }
   }
 
   &__icon {
-    width: 4rem;
-    height: 4rem;
+    width: 4.5rem;
+    height: 4.5rem;
 
     background-size: cover;
 
-    &-world {
+    &--world {
       background-image: url("../../assets/icons/planet-earth.svg");
     }
-    &-statistics {
+    &--statistics {
       background-image: url("../../assets/icons/bar-chart.svg");
     }
   }
   &__text {
-    font-size: 2rem;
+    font-size: 2.3rem;
 
     text-align: left;
     width: 50%;
-    padding: 1rem;
+    padding: 2rem;
   }
 }

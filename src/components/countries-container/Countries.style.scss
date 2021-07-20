@@ -12,7 +12,7 @@
   &__container {
     grid-row: 2 / span 1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
     gap: 3rem;
 
     justify-content: center;
@@ -30,8 +30,8 @@
 
 .card {
   position: relative;
-  width: 25rem;
-  height: 15rem;
+  width: 35rem;
+  height: 20rem;
 
   overflow: hidden;
   border-radius: 5px;
@@ -43,11 +43,10 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
 
   &__heading {
-    width: 70%;
     padding: 0.5rem;
 
-    font-size: 1rem;
-    background-color: #5137f3;
+    font-size: 1.2rem;
+    background-color: rgba(80, 55, 243, 0.8);
     color: white;
 
     position: absolute;
@@ -82,15 +81,16 @@
     height: 100%;
 
     text-align: left;
-    font-size: 1.2rem;
 
     transition: 0.3s;
+    font-size: 1.5rem;
     &__info {
       flex-basis: 100%;
       font-weight: 700;
       color: #5137f3;
       i {
         color: black;
+        font-style: unset;
       }
     }
   }
