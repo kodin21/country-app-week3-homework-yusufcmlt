@@ -17,4 +17,14 @@ function useCountryList(apiURL) {
   return { resData, isLoading };
 }
 
-export { useCountryList };
+function useFadeAnimation(fadeDirection) {
+  const [fadeAnimation, setFadeAnimation] = useState("");
+
+  useEffect(() => {
+    setFadeAnimation(fadeDirection);
+  }, []);
+
+  return { fadeAnimation };
+}
+
+export { useCountryList, useFadeAnimation };
