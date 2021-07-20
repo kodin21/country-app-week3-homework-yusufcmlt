@@ -6,8 +6,11 @@ function useCountryList(apiURL) {
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log("Ancient api gods are calling!");
     axios.get(apiURL).then(({ data }) => {
+      console.log("Ancient api gods sent their blessings...");
       setResData(data);
+      setLoading(false);
     });
   }, []);
 
