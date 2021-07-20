@@ -1,0 +1,23 @@
+.statistics {
+  grid-column: center-start/center-end;
+  grid-row: content-start / content-end;
+  height: 300px;
+
+  padding: 5rem;
+
+  transform: translateX(400px);
+  opacity: 0.5;
+  transition: 0.3s;
+  &--enter-left {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  &__heading {
+    font-size: 3rem;
+  }
+  .placeholderTest {
+    height: 500px;
+    background-color: red;
+  }
+}
