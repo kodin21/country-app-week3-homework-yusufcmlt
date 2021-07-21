@@ -24,14 +24,17 @@
     &--world {
       background-color: var(--color-purple);
       &:hover {
-        background-color: var(--color-purple-dark);
+        background-color: var(--color-orange);
       }
     }
     &--statistics {
       background-color: var(--color-orange);
       &:hover {
-        background-color: var(--color-orange-dark);
+        background-color: var(--color-purple);
       }
+    }
+    &:hover > * {
+      transform: scale(1.05);
     }
   }
 
@@ -40,6 +43,7 @@
     height: 4.5rem;
 
     background-size: cover;
+    transition: 0.3s;
 
     &--world {
       background-image: url("../../assets/icons/planet-earth.svg");
@@ -54,5 +58,6 @@
     text-align: left;
     width: 50%;
     padding: 2rem;
+    transition: 0.3s;
   }
 }

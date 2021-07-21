@@ -4,28 +4,9 @@ import "../Countries.style.scss";
 
 export default function CountryCard({ cardData }) {
   const { name, languages, population, region, flag, capital } = cardData;
-  const [createAnimation, setAnimation] = useState("");
-
-  useEffect(() => {
-    let randomTimeout = createRandomAnimation();
-
-    return () => {
-      clearTimeout(randomTimeout);
-    };
-  }, []);
-
-  //Add creation animation with random delay
-  const createRandomAnimation = () => {
-    let randomTime = Math.round(Math.random() * 1500) + 1;
-    let creatorTimeout = setTimeout(() => {
-      setAnimation(" card--animation");
-    }, randomTime);
-
-    return creatorTimeout;
-  };
 
   return (
-    <div className={`card${createAnimation}`}>
+    <div className={`card`}>
       <h3 className="card__heading">{name}</h3>
       <img src={flag} alt={`${name} flag`} className="card__flag" />
       <div className="card__content">

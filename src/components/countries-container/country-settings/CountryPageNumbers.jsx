@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 
-export default function CountryPages({ pageCount, handlePageNumber }) {
+export default function CountryPageNumbers({ pageCount, setCurrentPage }) {
+  //Page number setter.
+  const handlePageNumber = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   //Create n button(s) using given page count.
   const createPageButtons = () => {
     const pageArr = [];

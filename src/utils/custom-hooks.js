@@ -8,7 +8,7 @@ function useCountryList(apiURL) {
   useEffect(() => {
     console.log("Ancient api gods are calling!");
     axios.get(apiURL).then(({ data }) => {
-      console.log("Ancient api gods sent their blessings...");
+      console.log("Ancient api gods have sent their blessings...");
       setResData(data);
       setLoading(false);
     });
