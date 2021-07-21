@@ -38,8 +38,9 @@ export default function CountryFilter({ filterByName, filterByRegion }) {
       />
       <>
         <h2>Region:</h2>
-        {regionFilters.map((region) => (
+        {regionFilters.map((region, index) => (
           <button
+            key={index + region}
             onClick={handleRegionClick}
             type="button"
             className="countries__filter__button"
