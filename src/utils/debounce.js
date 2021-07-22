@@ -1,3 +1,5 @@
+//Standart debounce
+//Delays search function everytime user types in searchbar
 const debounce = (func, wait = 600) => {
   let timeout;
 

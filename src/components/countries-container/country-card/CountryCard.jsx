@@ -2,6 +2,12 @@ import React, { useEffect, useState } from "react";
 
 import "../Countries.style.scss";
 
+/**
+ * Country Card component
+ * Renders a country card item using given data
+ *
+ */
+
 export default function CountryCard({ cardData }) {
   const { name, languages, population, region, flag, capital } = cardData;
   const queryName = name.toLowerCase().split(" ").join("+");

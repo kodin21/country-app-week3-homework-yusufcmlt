@@ -17,6 +17,7 @@ function useCountryList(apiURL) {
   return { resData, isLoading };
 }
 
+//Adding tab animations (-left -right)
 function useFadeAnimation(fadeDirection) {
   const [fadeAnimation, setFadeAnimation] = useState("");
 

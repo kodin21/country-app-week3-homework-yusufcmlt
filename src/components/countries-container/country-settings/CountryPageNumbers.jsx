@@ -15,6 +15,7 @@ export default function CountryPageNumbers({ pageCount, setCurrentPage }) {
           onClick={() => {
             handlePageNumber(i + 1);
           }}
+          key={i}
           type="button"
           className="countries__pages__button"
         >

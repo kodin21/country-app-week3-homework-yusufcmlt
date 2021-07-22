@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from "react";
 
 import CountryCard from "./country-card/CountryCard";
-
-import "./Countries.style.scss";
 import CountryFilter from "./country-settings/CountryFilter";
 import CountryPageNumbers from "./country-settings/CountryPageNumbers";
 import { useFadeAnimation } from "../../utils/custom-hooks";
 
+import "./Countries.style.scss";
+
+/**
+ * Countries Container Component
+ * Renders countries tab with filter, paging and country card components
+ * Uses countries data
+ *
+ */
 export default function CountriesContainer({ countryList }) {
   const { fadeAnimation } = useFadeAnimation(" countries--enter-right");
   const [filteredCountries, setFilteredCountries] = useState(countryList);
