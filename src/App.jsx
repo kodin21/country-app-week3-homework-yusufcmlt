@@ -19,7 +19,16 @@ function App() {
 
   return (
     <div className="app">
-      <h1 className="app__heading">All countries in one place.</h1>
+      <h1 className="app__heading">
+        All countries in one place.{" "}
+        <a
+          className="github-link"
+          href="https://github.com/yusufcmlt"
+          target="_blank"
+        >
+          {" "}
+        </a>
+      </h1>
       <Header handleTabs={handleTabs} />
       {isLoading ? (
         <Loading />
