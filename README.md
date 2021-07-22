@@ -1,10 +1,11 @@
 # Ülke Listesi / Istatistikleri Uygulaması
 
 <video src="https://user-images.githubusercontent.com/58252790/126675421-c65996ac-560d-4c9d-9308-b0dcadb3cda3.mp4" width="1280" height="720" controls preload autoplay></video>
-
-  <img src="https://user-images.githubusercontent.com/58252790/126676645-7c655e9c-af3d-4c74-bfdf-430ce7e68784.png" width="400" height="220" />
-  <img src="https://user-images.githubusercontent.com/58252790/126676640-d74d5dee-d02a-43fb-b109-cff11b8b2cb4.png" width="400" height="220" />
-  <img src="https://user-images.githubusercontent.com/58252790/126676626-0899c34e-59ab-4270-a9ff-f17b71bcb3d2.png" width="400" height="220" />
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/58252790/126676645-7c655e9c-af3d-4c74-bfdf-430ce7e68784.png" width="250" height="140" />
+  <img src="https://user-images.githubusercontent.com/58252790/126676640-d74d5dee-d02a-43fb-b109-cff11b8b2cb4.png" width="250" height="140" />
+  <img src="https://user-images.githubusercontent.com/58252790/126676626-0899c34e-59ab-4270-a9ff-f17b71bcb3d2.png" width="250" height="140" />
+</p>
 
 #### [Projenin en son calisan haline buradan ulasabilirsiniz](https://country-app-yusufcmlt.netlify.app/)
 
