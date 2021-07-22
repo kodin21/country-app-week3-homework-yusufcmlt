@@ -1,19 +1,20 @@
 # Ülke Listesi / Istatistikleri Uygulaması
 
-#### Demo:
+<video src="https://user-images.githubusercontent.com/58252790/126675421-c65996ac-560d-4c9d-9308-b0dcadb3cda3.mp4" width="1280" height="720" controls preload autoplay></video>
 
-- Projenin en son calisan haline [buradan ulasabilirsiniz](https://country-app-yusufcmlt.netlify.app/) - **Tamamlanmadi**
+  <img src="https://user-images.githubusercontent.com/58252790/126676645-7c655e9c-af3d-4c74-bfdf-430ce7e68784.png" width="400" height="220" />
+  <img src="https://user-images.githubusercontent.com/58252790/126676640-d74d5dee-d02a-43fb-b109-cff11b8b2cb4.png" width="400" height="220" />
+  <img src="https://user-images.githubusercontent.com/58252790/126676626-0899c34e-59ab-4270-a9ff-f17b71bcb3d2.png" width="400" height="220" />
+
+#### [Projenin en son calisan haline buradan ulasabilirsiniz](https://country-app-yusufcmlt.netlify.app/)
 
 #### Gereksinimler:
 
 - [x] Ulke listesi icin [REST Countries API](https://restcountries.eu/) kullanildi.
 - [x] Ulke listesi ve istatistikleri iceren 2 adet tab bulunuyor.
 - [x] Ulke listesi secili oldugunda ulke bilgilerini iceren kartlar goruntulenebilir, bulunduklari bolgelere gore veya isim ile filtrelenebilir durumda.
+- [x] Ulke istatistiklerini iceren tab.
 - [x] Netlify uzerinde yayinlanmis demo linkine ustten ulasilabilir.
-
-##### Tamamlanmadi:
-
-- [ ] Ulke istatistiklerini iceren tab.
 
 #### Projeyi calistirmak icin:
 
