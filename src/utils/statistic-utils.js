@@ -37,7 +37,7 @@ function languageSorter(countryData) {
 
 function statPropertySorter(countryData, sortProperty) {
   //Sort object array with given property and get first 10;
-  const topSortedCountryData = countryData
+  const topSortedCountryData = [...countryData]
     .sort((a, b) => b[sortProperty] - a[sortProperty])
     .slice(0, 10)
     .map((country) => ({
