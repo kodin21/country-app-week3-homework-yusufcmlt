@@ -40,7 +40,6 @@ export default function StatisticCard({ data, countryList }) {
         setStatisticData(resolvedData);
         setLoadStatus("loaded");
         setHeadingTransform(" statcard__heading-2--loaded");
-        console.log(resolvedData);
       });
     }
   };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import debounce from "../../../utils/debounce";
+import { DebounceInput } from "react-debounce-input";
 
 export default function CountryFilter({ filterByName, filterByRegion }) {
   const regionFilters = [
@@ -22,19 +22,17 @@ export default function CountryFilter({ filterByName, filterByRegion }) {
   const handleSearchCountry = (event) => {
     const searchTerm = event.target.value.trim();
     setSearchInput(searchTerm);
-    //Debounce search function
-    debounce(() => {
-      filterByName(searchTerm);
-    })();
+    filterByName(searchTerm);
   };
 
   return (
     <div className="countries__filter">
-      <input
-        className="countries__filter__input"
+      <DebounceInput
+        debounceTimeout={650}
         placeholder="Search..."
-        onChange={handleSearchCountry}
         value={searchInput}
+        onChange={handleSearchCountry}
+        className="countries__filter__input"
       />
       <>
         <h2>Region:</h2>
