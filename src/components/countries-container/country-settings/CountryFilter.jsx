@@ -35,17 +35,19 @@ export default function CountryFilter({ filterByName, filterByRegion }) {
         className="countries__filter__input"
       />
       <>
-        <h2>Region:</h2>
-        {regionFilters.map((region, index) => (
-          <button
-            key={index + region}
-            onClick={handleRegionClick}
-            type="button"
-            className="countries__filter__button"
-          >
-            {region}
-          </button>
-        ))}
+        <div className="countries__filter__buttons">
+          <h2>Region:</h2>
+          {regionFilters.map((region, index) => (
+            <button
+              key={index + region}
+              onClick={handleRegionClick}
+              type="button"
+              className="countries__filter__button"
+            >
+              {region}
+            </button>
+          ))}
+        </div>
       </>
     </div>
   );
