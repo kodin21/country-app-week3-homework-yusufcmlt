@@ -13,7 +13,7 @@ function App() {
   const [tab, setTab] = useState("countries");
 
   const handleTabs = (tabRoute) => {
-    window.scrollTo(0, 300);
+    window.scrollTo(0, 500);
     setTab(tabRoute);
   };
 
@@ -28,7 +28,7 @@ function App() {
           {tab === "countries" ? (
             <CountriesContainer countryList={resData} />
           ) : (
-            <StatisticsContainer />
+            <StatisticsContainer countryList={resData} />
           )}
         </>
       )}
