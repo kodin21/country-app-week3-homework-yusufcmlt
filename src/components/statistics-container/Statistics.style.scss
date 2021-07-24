@@ -30,16 +30,19 @@
     grid-row: 2 / span 1;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 50rem));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 60rem));
     gap: 3rem;
     justify-content: center;
   }
 }
 
 .statcard {
+  position: relative;
+
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
-  background-color: var(--color-orange);
+  //background-color: var(--color-orange);
+  background-color: white;
   cursor: pointer;
 
   display: grid;
@@ -55,23 +58,23 @@
   overflow: hidden;
 
   &:hover {
-    transform: scale(1.05);
-    background-color: var(--color-purple);
+    z-index: 5;
+    transform: scale(1.1);
+    border: 0.5rem solid var(--color-purple);
   }
 
-  &__heading-2 {
-    font-size: 5rem;
+  &__heading {
     text-align: center;
-    color: white;
+    color: var(--color-purple);
     transition: 0.5s;
     padding: 1rem 2rem;
-    &--loaded {
-      font-size: 2rem;
-    }
+    font-size: 2rem;
   }
+
   &__content {
-    padding: 2rem;
-    width: 80%;
+    width: 90%;
+    height: 80%;
+    align-self: start;
   }
   &__list {
     list-style: none;
@@ -94,5 +97,8 @@
         }
       }
     }
+  }
+  &__chart {
+    margin: 4rem 0;
   }
 }

@@ -1,70 +1,63 @@
-import React, { useMemo, useState } from "react";
-import {
-  languageSorter,
-  statPropertySorter,
-} from "../../../utils/statistic-utils";
-import Loading from "../../loading/Loading";
+import { Pie, Bar } from "react-chartjs-2";
+import React from "react";
 
 /**
  * Statistic card component:
  * Calculates and renders statistics based on given property data
  */
 
-export default function StatisticCard({ data, countryList }) {
-  const { name, statisticProperty, unit } = data;
+export default function StatisticCard({ statData }) {
+  const { title, data, property } = statData;
 
-  const [loadStatus, setLoadStatus] = useState("idle");
-  const [statisticData, setStatisticData] = useState([]);
-  const [headingTransform, setHeadingTransform] = useState("");
+  const chartData = {
+    labels: data.map(({ name }) => name),
+    datasets: [
+      {
+        label: title,
+        data: data.map((item) => item[property]),
+        backgroundColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
+        borderColor: [
+          "rgba(255, 99, 132, 1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)",
+        ],
 
-  //Get sorted statics data based on property name
-  //I've added small delay to see loading animation
-  const getSortedProperty = () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        if (statisticProperty === "languages") {
-          resolve(languageSorter(countryList));
-        } else {
-          resolve(statPropertySorter(countryList, statisticProperty));
-        }
-      }, 1000);
-    });
-  };
-
-  //Clicking on statistic card.
-  //Calculates data then sets states.
-  const handleCardClick = () => {
-    if (loadStatus === "idle") {
-      setLoadStatus("loading");
-      getSortedProperty().then((resolvedData) => {
-        setStatisticData(resolvedData);
-        setLoadStatus("loaded");
-        setHeadingTransform(" statcard__heading-2--loaded");
-      });
-    }
+        borderWidth: 1,
+      },
+    ],
   };
 
   return (
-    <div className="statcard" onClick={handleCardClick}>
-      <h2 className={`statcard__heading-2${headingTransform}`}>{name}</h2>
-      {loadStatus === "idle" ? null : loadStatus === "loading" ? (
-        <Loading />
-      ) : (
-        <div className="statcard__content">
-          {
-            <ul className="statcard__list">
-              {statisticData.map((stat, index) => (
-                <li key={index + stat.name} className="statcard__list__item">
-                  <span>{index + 1}-</span>
-                  <span>{stat.name}</span>
-                  <span>{stat[statisticProperty]} </span>
-                  <span>{unit}</span>
-                </li>
-              ))}
-            </ul>
-          }
+    <div className="statcard">
+      <h2 className={`statcard__heading`}>{title}</h2>
+
+      <div className="statcard__content">
+        {
+          <ul className="statcard__list">
+            {data.map((stat, index) => (
+              <li key={index} className="statcard__list__item">
+                <span>{index + 1}-</span>
+                <span>{stat.name}</span>
+                <span>{stat[property]} </span>
+                <span>{stat.unit}</span>
+              </li>
+            ))}
+          </ul>
+        }
+        <div className="statcard__chart">
+          <Bar data={chartData} />
         </div>
-      )}
+      </div>
     </div>
   );
 }

@@ -2,14 +2,17 @@ import "./App.scss";
 import React, { useEffect, useState } from "react";
 import CountriesContainer from "./components/countries-container/CountriesContainer";
 import Header from "./components/header/Header";
-import { useCountryList } from "./utils/custom-hooks";
+import { useCountryList, useStatisticData } from "./utils/custom-hooks";
 import StatisticsContainer from "./components/statistics-container/StatisticsContainer";
 import Loading from "./components/loading/Loading";
+import { statisticsConfig } from "./utils/statistic-utils";
 
 function App() {
   const { resData, isLoading } = useCountryList(
     "https://restcountries.eu/rest/v2/all"
   );
+  const statisticData = useStatisticData(statisticsConfig, resData);
+
   const [tab, setTab] = useState("countries");
 
   const handleTabs = (tabRoute) => {
@@ -37,7 +40,7 @@ function App() {
           {tab === "countries" ? (
             <CountriesContainer countryList={resData} />
           ) : (
-            <StatisticsContainer countryList={resData} />
+            <StatisticsContainer statisticData={statisticData} />
           )}
         </>
       )}

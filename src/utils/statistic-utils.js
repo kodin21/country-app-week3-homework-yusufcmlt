@@ -1,51 +1,72 @@
 //DO NOT TOUCH THIS MONSTROSITY
 
-function languageSorter(countryData) {
-  //Getting all languages as destructured [English,Arabic,English,Turkish,German......]
-  const languagesDestructured = countryData.reduce(
-    (prevArr, { languages }) => [
-      ...prevArr,
-      ...languages.map((lang) => lang.name),
-    ],
-    []
+const statisticsConfig = [
+  {
+    name: "Most spoken languages",
+    statisticProperty: "languages",
+    unit: "-countries",
+  },
+  {
+    name: "Largest countries",
+    statisticProperty: "area",
+    unit: "-km²",
+  },
+  {
+    name: "Countries with highest population",
+    statisticProperty: "population",
+    unit: "",
+  },
+  {
+    name: "Countries with highest wealth inequality",
+    statisticProperty: "gini",
+    unit: "",
+  },
+];
+
+function getStatisticsProperty(data, property) {
+  return data.map((item) => ({
+    name: item.name,
+    [property]: item[property],
+  }));
+}
+
+function sortAndGetFirstTen(data, sortProperty) {
+  return data.sort((a, b) => b[sortProperty] - a[sortProperty]).slice(0, 10);
+}
+
+function processLanguages(langData) {
+  //Getting spoken languages arrays from countries
+  //Returns array of languages array
+
+  const languagesArray = langData.map((country) =>
+    country.languages.map(({ name }) => name)
   );
 
-  //Counting languages inside destructured language array using Map
-  //Create new Map() then check if current language exist in the Map while iterating over  destructured array of languages.
-  //I'm using map here just for iteration.
+  //Flattening the array
+  //Getting all languages as destructured  [English,Arabic,English,Turkish,German......]
+  const languagesDestructured = languagesArray.flat();
+
+  //Count languages on array.
   const countedLanguages = languagesDestructured.reduce(
-    (prevMap, currentLang) => {
-      prevMap.set(currentLang, (prevMap.get(currentLang) || 0) + 1);
-      return prevMap;
-    },
-    new Map()
+    (prevLangObj, currentLang) => ({
+      ...prevLangObj,
+      [currentLang]: (prevLangObj[currentLang] || 0) + 1,
+    }),
+    {}
   );
 
-  //Sort given Map descending order then convert into array of language objects
-  const sortedLanguages = [...countedLanguages.entries()]
-    .sort((a, b) => b[1] - a[1])
-    .slice(0, 10)
-    .reduce((prevLangArr, currentLangArr) => {
-      return [
-        ...prevLangArr,
-        { name: currentLangArr[0], languages: currentLangArr[1] },
-      ];
-    }, []);
+  //Shaping counted object as array of objects.
+  const shapedLanguages = Object.keys(countedLanguages).map((key) => ({
+    name: key,
+    languages: countedLanguages[key],
+  }));
 
-  return sortedLanguages;
+  return shapedLanguages;
 }
 
-function statPropertySorter(countryData, sortProperty) {
-  //Sort object array with given property and get first 10;
-  const topSortedCountryData = [...countryData]
-    .sort((a, b) => b[sortProperty] - a[sortProperty])
-    .slice(0, 10)
-    .map((country) => ({
-      name: country.name,
-      [sortProperty]: country[sortProperty],
-    }));
-
-  return topSortedCountryData;
-}
-
-export { languageSorter, statPropertySorter };
+export {
+  getStatisticsProperty,
+  processLanguages,
+  sortAndGetFirstTen,
+  statisticsConfig,
+};
