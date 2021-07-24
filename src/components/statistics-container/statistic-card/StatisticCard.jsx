@@ -7,7 +7,7 @@ import React from "react";
  */
 
 export default function StatisticCard({ statData }) {
-  const { title, data, property } = statData;
+  const { title, data, property, unit } = statData;
 
   const chartData = {
     labels: data.map(({ name }) => name),
@@ -49,7 +49,7 @@ export default function StatisticCard({ statData }) {
                 <span>{index + 1}-</span>
                 <span>{stat.name}</span>
                 <span>{stat[property]} </span>
-                <span>{stat.unit}</span>
+                <span>{unit}</span>
               </li>
             ))}
           </ul>
