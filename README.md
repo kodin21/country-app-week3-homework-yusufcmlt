@@ -1,7 +1,6 @@
 ## Ülke Listesi / Istatistikleri Uygulaması
 
-<video src="
-https://user-images.githubusercontent.com/58252790/126874833-f149c601-5170-4ca9-8639-c2bdae23ee7b.mp4" width="1280" height="720" controls preload autoplay></video>
+<video src="https://user-images.githubusercontent.com/58252790/126874833-f149c601-5170-4ca9-8639-c2bdae23ee7b.mp4" width="1280" height="720" controls preload autoplay></video>
 
 ---
 
