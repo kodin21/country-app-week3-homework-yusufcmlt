@@ -1,5 +1,5 @@
 import "./App.scss";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import CountriesContainer from "./components/countries-container/CountriesContainer";
 import Header from "./components/header/Header";
 import { useCountryList, useStatisticData } from "./utils/custom-hooks";
@@ -19,6 +19,8 @@ function App() {
     window.scrollTo(0, 500);
     setTab(tabRoute);
   };
+  //Small optimizing tries
+  const memoizedTabFunction = useCallback(handleTabs, []);
 
   return (
     <div className="app">
@@ -32,7 +34,7 @@ function App() {
           {" "}
         </a>
       </h1>
-      <Header handleTabs={handleTabs} />
+      <Header handleTabs={memoizedTabFunction} />
       {isLoading ? (
         <Loading />
       ) : (

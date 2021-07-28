@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 
-export default function CountryFilter({ filterByName, filterByRegion }) {
+function CountryFilter({ filterByName, filterByRegion }) {
   const regionFilters = [
     "All",
     "Africa",
@@ -52,3 +52,5 @@ export default function CountryFilter({ filterByName, filterByRegion }) {
     </div>
   );
 }
+//Small optimizing tries
+export default memo(CountryFilter);

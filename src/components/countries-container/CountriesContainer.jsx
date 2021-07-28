@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import CountryCard from "./country-card/CountryCard";
 import CountryFilter from "./country-settings/CountryFilter";
@@ -71,6 +71,10 @@ export default function CountriesContainer({ countryList }) {
     }
   };
 
+  //Small optimizing tries
+  const memoizedFilterByRegion = useCallback(filterByRegion, []);
+  const memoizedFilterByName = useCallback(filterByName, []);
+
   //Calculating pages using max item quantity(25 item default)
   //Example: Page 1 ---> 0-24   Page 3 ---> 50-75
   const filterByPage = () => {
@@ -93,8 +97,8 @@ export default function CountriesContainer({ countryList }) {
         <span className="countries__heading__filter">{filterHeading}</span>
       </h2>
       <CountryFilter
-        filterByName={filterByName}
-        filterByRegion={filterByRegion}
+        filterByName={memoizedFilterByName}
+        filterByRegion={memoizedFilterByRegion}
       />
       <CountryPageNumbers
         pageCount={pageCount}

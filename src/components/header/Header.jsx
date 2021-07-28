@@ -1,9 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import NavButton from "../nav-button/NavButton";
 
 import "./Header.style.scss";
 
-export default function Header({ handleTabs }) {
+function Header({ handleTabs }) {
+  console.log("RENDERED");
   return (
     <header className="header">
       <NavButton handleTabs={handleTabs} route="countries" icon="world">
@@ -15,3 +16,5 @@ export default function Header({ handleTabs }) {
     </header>
   );
 }
+//Small optimizing tries
+export default memo(Header);
