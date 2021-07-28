@@ -17,6 +17,7 @@
 
   /* Box Shadow */
   --shadow: rgba(0, 0, 0, 0.1) 0px 3px 8px;
+  --shadow-hover: rgba(0, 0, 0, 0.5) 0px 3px 8px;
 }
 html {
   font-size: 62.5%;
