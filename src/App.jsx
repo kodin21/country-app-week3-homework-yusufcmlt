@@ -9,7 +9,7 @@ import { statisticsConfig } from "./utils/statistic-utils";
 
 function App() {
   const { resData, isLoading } = useCountryList(
-    "https://restcountries.eu/rest/v2/all"
+    "https://restcountries.com/v2/all"
   );
   const statisticData = useStatisticData(statisticsConfig, resData);
 
